@@ -11,6 +11,4 @@ COPY requirements.txt .
 
 COPY . .
 
-RUN make my_env_init
-
 RUN make install
