@@ -6,7 +6,6 @@ services:
     build: .
     command: make run
     volumes:
-      - ../data/llmservice-models:/app/services/service/models
       - .:/app/services/service
     ports:
       - "3000:3000"
@@ -24,9 +23,9 @@ services:
     image: ubuntu/mlflow:2.1.1_1.0-22.04
     container_name: tracker_mlflow
     restart: unless-stopped
-    command: python3 -m mlflow ui --port 5001
+    command: python3 -m mlflow ui --port 5000
     ports:
-      - "5001:5001"
+      - "5000:5000"
     networks:
       - local
 networks:
